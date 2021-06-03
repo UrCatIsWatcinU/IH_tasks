@@ -5,8 +5,8 @@
 В WSL консоли в корневой папке проекта:
 
     cd parser
-    npm install
     mkdir output
+    npm install
     node parser_v2.js
 
 Полученные JSON будут лежать в папке parser/output
