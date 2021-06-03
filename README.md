@@ -2,10 +2,10 @@
 ### Как сделать JSON с парами
 Берешь сначал укропу потом кошачью... так 
 
-<cd parser>
-<npm install>
-<mkdir output>
-<node parser_v2.js>
+    cd parser
+    npm install
+    mkdir output
+    node parser_v2.js
 
 Полученные JSON будут лежать в папке parser/output
 
