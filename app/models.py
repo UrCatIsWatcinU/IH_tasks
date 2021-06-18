@@ -48,7 +48,7 @@ class CustomStudentActivity(StudentActivity):
     __tablename__ = 'CustomStudentsActivities'
 
 class ActivityFromTask(StudentActivity):
-    __tablename__ = 'ActivitiesFromTask'
+    __tablename__ = 'ActivitiesFromTasks'
 
 class ComandActivity(Activity):
     __tablename__ = 'ComandsActivities'
@@ -64,7 +64,7 @@ class Task(db.Model):
 
 class StudentTask(Task):
     __tablename__ = 'StudentsTasks'
-    activity_from_task = db.relationship('StudentTask', backref='task', lazy='dynamic', uselist=False)
+    activity_from_task = db.relationship('ActivityFromTask', backref='task', lazy='select', uselist=False)
 
 class Homework(StudentTask):
     __tablename__ = 'Homeworks'
@@ -72,7 +72,7 @@ class Homework(StudentTask):
 class CustomStudentTask(StudentTask):
     __tablename__ = 'CustomStudentsTasks'
 
-class CommandTask(Task):
+class ComandTask(Task):
     __tablename__ = 'ComandsTasks'
 
 
@@ -102,7 +102,7 @@ class Direction(db.Model):
 
 class ComandsMemberRole(db.Model):
     __tablename__ = 'ComandsMembersRoles'
-    members = db.relationship('ComandsMembers', backref='command_role', lazy='dynamic')
+    members = db.relationship('ComandMember', backref='command_role', lazy='dynamic')
 
 class AdminRole(db.Model):
     __tablename__ = 'AdminsRoles'
@@ -113,4 +113,4 @@ class TaskStatus(db.Model):
     tasks = db.relationship('Task', backref='status', lazy='dynamic')
 
 
-print(Lesson)
+print(Activity.starttime.of_type)
